@@ -1,0 +1,6 @@
+[submodule "CarService/CloudSpringIntro"]
+	path = CarService/CloudSpringIntro
+	url = https://github.com/Mexelder/CloudSpringIntro.git
+[submodule "OrderService/CloudSpringIntro"]
+	path = OrderService/CloudSpringIntro
+	url = https://github.com/Mexelder/CloudSpringIntro.git
