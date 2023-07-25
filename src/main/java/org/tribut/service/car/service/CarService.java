@@ -9,7 +9,6 @@ import org.tribut.service.car.model.Car;
 import org.tribut.service.car.repository.CarRepository;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -21,7 +20,7 @@ public class CarService {
     public List<CarResponse> getALlCars() {
 
         List<Car> cars = carRepository.findAll();
-        return cars.stream().map(this::mapCarToCarResponse).collect(Collectors.toList());
+        return cars.stream().map(this::mapCarToCarResponse).toList();
     }
 
     private CarResponse mapCarToCarResponse(Car car) {
@@ -45,5 +44,9 @@ public class CarService {
                 .color(carDto.getColor())
                 .price(carDto.getPrice())
                 .build();
+    }
+
+    public void delete(String id) {
+        carRepository.deleteById(id);
     }
 }
